@@ -1,0 +1,61 @@
+body {
+    background:#0d0d0d;
+    color:white;
+    font-family:Segoe UI, Arial;
+    margin:0;
+}
+
+h1 {
+    text-align:center;
+    padding:15px;
+    color:#ff2e2e;
+}
+
+.grid {
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:20px;
+    padding:20px;
+}
+
+.card {
+    background:#1a1a1a;
+    border-radius:12px;
+    padding:15px;
+    box-shadow:0 0 15px black;
+}
+
+canvas {
+    height:220px !important;
+}
+
+.bar {
+    height:12px;
+    background:#333;
+    margin-bottom:8px;
+    border-radius:6px;
+}
+
+.fill {
+    height:100%;
+    background:#ff2e2e;
+    border-radius:6px;
+}
+
+table {
+    width:100%;
+    border-collapse:collapse;
+}
+
+td {
+    padding:5px;
+    border-bottom:1px solid #333;
+}
+
+button {
+    background:#ff2e2e;
+    border:none;
+    color:white;
+    padding:4px 8px;
+    cursor:pointer;
+}
