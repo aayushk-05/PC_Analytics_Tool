@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PC Analytics Tool</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        body {
+            background:#0d0d0d;
+            color:white;
+            font-family:Arial;
+            margin:0;
+        }
+
+        h1 {
+            text-align:center;
+            padding:15px;
+            color:#ff3b3b;
+        }
+
+        .grid {
+            display:grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap:20px;
+            padding:20px;
+        }
+
+        .card {
+            background:#1a1a1a;
+            border-radius:12px;
+            padding:20px;
+            box-shadow:0 0 10px #000;
+        }
+
+        canvas {
+            height:200px !important;
+        }
+
+        .disks {
+            margin-top:15px;
+        }
+
+        .bar {
+            height:12px;
+            background:#333;
+            border-radius:6px;
+            margin-bottom:8px;
+        }
+
+        .fill {
+            height:100%;
+            background:#ff3b3b;
+            border-radius:6px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>⚡ PC Analytics Dashboard</h1>
+
+<div class="grid">
+
+    <div class="card"><canvas id="cpu"></canvas></div>
+    <div class="card"><canvas id="ram"></canvas></div>
+    <div class="card"><canvas id="gpu"></canvas></div>
+    <div class="card">
+        <h3>Disk Usage</h3>
+        <div id="disks" class="disks"></div>
+    </div>
+
+</div>
+
+
+<script>
+function makeChart(id, label) {
+    return new Chart(document.getElementById(id), {
+        type:'line',
+        data:{
+            labels:[],
+            datasets:[{
+                label:label,
+                data:[],
+                borderColor:'#ff3b3b',
+                tension:0.3
+            }]
+        },
+        options:{
+            animation:false,
+            scales:{ y:{min:0,max:100} }
+        }
+    });
+}
+
+const cpuChart = makeChart("cpu","CPU %");
+const ramChart = makeChart("ram","RAM %");
+const gpuChart = makeChart("gpu","GPU %");
+
+
+function push(chart,val){
+    chart.data.labels.push("");
+    chart.data.datasets[0].data.push(val);
+
+    if(chart.data.labels.length>40){
+        chart.data.labels.shift();
+        chart.data.datasets[0].data.shift();
+    }
+    chart.update();
+}
+
+
+async function update(){
+    const r = await fetch("/stats");
+    const data = await r.json();
+
+    push(cpuChart,data.cpu);
+    push(ramChart,data.ram);
+    push(gpuChart,data.gpu);
+
+    const disksDiv = document.getElementById("disks");
+    disksDiv.innerHTML="";
+
+    data.disks.forEach(d=>{
+        disksDiv.innerHTML += `
+            <div>${d.mount} (${d.usage}%)</div>
+            <div class="bar"><div class="fill" style="width:${d.usage}%"></div></div>
+        `;
+    });
+}
+
+setInterval(update,1000);
+</script>
+
+</body>
+</html>
