@@ -22,22 +22,26 @@ CPU Temperature
 Disk Usage
 
 📈 Real-Time Graphs
+
 Auto-updating charts
 Smooth scrolling
 1-second refresh rate
 
 ⚙️ Process Manager
+
 View top running processes
 Sort by CPU usage
 Kill any process instantly
 
 🎨 Clean UI
+
 Dark theme
 Card-based layout
 MSI Afterburner inspired look
 Fully browser-based
 
 🛠 Tech Stack
+
 Backend
 Python
 Flask
@@ -51,6 +55,7 @@ Chart.js
 
 📁 Project Structure
 PC_Analytics_Tool/
+
 │
 ├── ToolMain.py        → Flask backend server
 
@@ -65,6 +70,7 @@ PC_Analytics_Tool/
 └── README.md
 
 ⚙️ Installation Guide
+
 1️⃣ Clone the repository
 git clone https://github.com/YOUR_USERNAME/PC_Analytics_Tool.git
 cd PC_Analytics_Tool
