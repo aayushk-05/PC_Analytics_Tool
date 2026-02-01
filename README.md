@@ -53,10 +53,15 @@ Chart.js
 PC_Analytics_Tool/
 │
 ├── ToolMain.py        → Flask backend server
+
 ├── altgui.html        → Main frontend page
+
 ├── style.css          → Styling and theme
+
 ├── app.js             → Charts and API logic
+
 ├── requirements.txt   → Dependencies
+
 └── README.md
 
 ⚙️ Installation Guide
