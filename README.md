@@ -6,14 +6,14 @@ This tool works like a lightweight Task Manager + MSI Afterburner, showing live 
 
 Perfect for:
 
-🧠 Learning Flask
-🖥 Monitoring system performance
-🧪 Practicing frontend + backend integration
-⚙️ Building analytics dashboards
+Learning Flask
+Monitoring system performance
+Practicing frontend + backend integration
+Building analytics dashboards
 
-✨ Features
+ Features
 
-📊 Live Monitoring
+Live Monitoring
 
 CPU Usage (%)
 RAM Usage (%)
@@ -21,26 +21,26 @@ GPU Usage (%)
 CPU Temperature
 Disk Usage
 
-📈 Real-Time Graphs
+Real-Time Graphs
 
 Auto-updating charts
 Smooth scrolling
 1-second refresh rate
 
-⚙️ Process Manager
+ Process Manager
 
 View top running processes
 Sort by CPU usage
 Kill any process instantly
 
-🎨 Clean UI
+Clean UI
 
 Dark theme
 Card-based layout
 MSI Afterburner inspired look
 Fully browser-based
 
-🛠 Tech Stack
+Tech Stack
 
 Backend
 Python
@@ -53,7 +53,7 @@ CSS
 JavaScript
 Chart.js
 
-📁 Project Structure
+Project Structure
 PC_Analytics_Tool/
 
 │
@@ -69,13 +69,13 @@ PC_Analytics_Tool/
 
 └── README.md
 
-⚙️ Installation Guide
+Installation Guide
 
-1️⃣ Clone the repository
+Clone the repository
 git clone https://github.com/YOUR_USERNAME/PC_Analytics_Tool.git
 cd PC_Analytics_Tool
 
-2️⃣ Create virtual environment (recommended)
+Create virtual environment (recommended)
 Linux / macOS
 python3 -m venv venv
 source venv/bin/activate
@@ -84,7 +84,7 @@ Windows
 python -m venv venv
 venv\Scripts\activate
 
-3️⃣ Install dependencies
+Install dependencies
 
 If requirements.txt exists:
 pip install -r requirements.txt
@@ -92,21 +92,21 @@ pip install -r requirements.txt
 Or manually:
 pip install flask psutil gputil setuptools
 
-▶️ Run the App
+Run the App
 Linux / macOS
 python3 ToolMain.py
 
 Windows
 python ToolMain.py
 
-🌐 Open in Browser
+Open in Browser
 
 After running, open:
 
 http://127.0.0.1:5000
 Your dashboard will load instantly.
 
-🧠 How It Works
+How It Works
 
 The Flask backend provides APIs:
 
@@ -117,7 +117,7 @@ The Flask backend provides APIs:
 
 The frontend fetches this data every second using JavaScript and updates charts live.
 
-🐛 Common Fixes
+ Common Fixes
 
 Flask not found
 pip install flask
@@ -132,7 +132,7 @@ Use virtual environment:
 python3 -m venv venv
 source venv/bin/activate
 
-🚀 Future Improvements (Ideas)
+Future Improvements (Ideas)
 
 Per-core CPU graphs
 GPU temperature monitoring
@@ -143,7 +143,7 @@ Desktop (.exe) app
 Android APK version
 Electron build
 
-🎯 Why this Project?
+Why this Project?
 This project helped me learn:
 
 Flask backend APIs
@@ -153,5 +153,4 @@ Real-time data visualization
 Full-stack integration
 Great for beginners and portfolio projects.
 
-Developed with ❤️ by
-Aayush Khugshal
+
